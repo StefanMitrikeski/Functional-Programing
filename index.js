@@ -12,8 +12,6 @@ function binarConverter(no) {
 };
 binarConverter(1551003);
 
-
-
 function Palindrome(word) {
 
     var reverseNumber = parseInt(word.toString().split("").reverse().join(""));
@@ -32,8 +30,6 @@ Palindrome(1331);
 // sum of the cubes of its digits is equal to the number itself. 
 // For example, 371 is an Armstrong number since 3**3 + 7**3 + 1**3 = 371.
 
-//решение 1:
-
 function ArmstrongNumber(num) {
     var result = 0;
     while (num > 0) {
@@ -48,7 +44,7 @@ for (let i = 100; i < 999; i++) {
     if (result === i) {
         console.log(i + " is amstrong number");
     }
-}
+// }
 ArmstrongNumber(121);
 
 function maxNumbers(a, b, c) {
@@ -71,7 +67,6 @@ function maxNumbers(a, b, c) {
 }
 maxNumbers(123, 12312, 123123);
 
-
 function getRandom(min, max) {
     var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
     return randomNumber;
@@ -88,7 +83,6 @@ function maxFromArr() {
     console.log(neshto, "is the biggest");
 }
 maxFromArr();
-
 
 function maxFromArray() {
     const niza = [];
@@ -138,7 +132,6 @@ function Salary(num, type) {
             return result;
         }
     }
-
 }
 Salary(1300, "zero");
 
@@ -165,14 +158,13 @@ function arrayInt(n) {
     console.log('osnovno sranje', niza)
 }
 arrayInt(10)
-
 function fibonacci() {
     var array = [];
-    array[0]= 0;
-    array[1]=1;
+    array[0] = 0;
+    array[1] = 1;
     for (let i = 2; i < 10; i++) {
         array[i] = array[i - 1] + array[i - 2];
-    }    
+    }
     console.log(array)
 }
 fibonacci();
@@ -183,17 +175,87 @@ function sumOFNum(num) {
 }
 sumOFNum(123);
 
-function removeDuplicates(data){
-    var result='';
+function removeDuplicates(data) {
+    var result = '';
     for (let i = 0; i < data.length; i++) {
-        if(result.indexOf(data[i])<0){
+        if (result.indexOf(data[i]) < 0) {
             result += data[i]
         }
     }
     console.log(result)
 }
-removeDuplicates("kruviii");
+removeDuplicates("baba");
 
+function learnMapping() {
+    var materials = [
+        'Hydrogen',
+        'Helium',
+        'Lithium',
+        'Beryllium'
+    ];
 
+    materials.map((str) => {
+        const { length } = str;
+        console.log(length)
+        return length;
+    });
+};
+learnMapping();
 
+function findIndexOfArray(n) {
+    console.log("N equals to " + n);
+    const arr = [];
+    const iterations = getRandom(9, 15);
+    console.log("number of iterations " + iterations);
+    for(i = 0; i < iterations; i++) {    
+      arr.push(getRandom(0, 15));
+    }
+    console.log("array " + arr);
+    const indexOfArray = arr[n];
+      if(indexOfArray) {
+      console.log(indexOfArray);
+      const result = indexOfArray ** n;
+      console.log(result);
+      } else {
+        console.log('Whatever')
+      }
+  };
 
+  findIndexOfArray(getRandom(0, 15));
+ 
+  function multiplyDigits(num) {
+    const arr = num.toString().split("").filter(e => e != 0);
+    let sum = 1;
+    for(let i = 0; i < arr.length; i++) {
+      sum = sum * arr[i];
+    }
+    console.log("result " + arr, sum);
+  };
+  multiplyDigits(2020202);
+
+  function sumOFNum(num) {
+    const number = num.toString().split("").map(Number).reduce(function (a, b) { return a * b });
+    console.log("rezultat",number)
+ };
+ sumOFNum(123123);
+
+function romanNumConverter(n){
+    var singleDigits=[
+        "I",
+        "II",
+        "III",
+        "IV",
+        "V",
+        "VI",
+        "VI",
+        "VIII",
+        "IX",
+        "X"
+    ]
+    for (let i = 0; i <= n; i++) {
+        if(i === n-1){
+            console.log("roman number is:",singleDigits[i]);
+        }
+    }
+}
+romanNumConverter(9);
