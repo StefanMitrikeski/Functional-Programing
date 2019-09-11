@@ -257,3 +257,47 @@ function romanNumConverter(n){
     }
 }
 romanNumConverter(9);
+function romanNumerals(number) {
+    ​
+        let result = '';
+    ​
+        const romanNumber = [
+            "MV","M","CM","D","CD", 
+            "C", 
+            "XC", 
+            "L", 
+            "XL", 
+            "X", 
+            "IX", 
+            "V", 
+            "IV", 
+            "I"
+        ];
+    ​
+        const numbers = [
+            "4000",
+            "1000", 
+            "900", 
+            "500",
+            "400", 
+            "100", 
+            "90", 
+            "50", 
+            "40", 
+            "10", 
+            "9", 
+            "5", 
+            "4", 
+            "1"
+        ];
+    ​
+        for (let i = 0; i <= numbers.length; i++) {
+            while (number % numbers[i] < number) {
+                number -= numbers[i];
+                result += romanNumber[i];
+            }  
+        }
+            console.log(result);
+    }
+    ​
+    romanNumerals(2075);
